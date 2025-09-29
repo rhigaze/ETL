@@ -27,8 +27,9 @@ Note: Replace the environment variable values with your actual file names if nee
 ### Clone the Repository
 
 ```bash  
-git clone https://github.com/rhigaze/etl-processor.git
-cd etl-processor
+git clone https://github.com/rhigaze/ETL.git
+
+cd ETL
 ```
 
 
@@ -69,5 +70,5 @@ pip3 install fastparquet==2024.11.0 pandas==2.3.2 matplotlib==3.10.6 langchain==
 
 # Run agent
 ```bash
-python3 agents.py
+python3 agents.py --file "output/merged_data.parquet"
 ```

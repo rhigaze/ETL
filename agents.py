@@ -106,7 +106,15 @@ def load_dataset(path) -> pd.DataFrame:
 # Main execution - Combining all tools into a LangChain Agent
 if __name__ == "__main__":
     print("Accessing Data...")
-    data_file = "output/merged_data.parquet"
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Demo script")
+    parser.add_argument("--file", type=str, required=True, help="Dataset file path")
+    args = parser.parse_args()
+
+    data_file = args.dataset_path #"output/merged_data.parquet"
+    print(f"data_file : {data_file}")
     df = load_dataset(data_file)
     data_agent_tools = DataAgentTools(df.head(10))
 
