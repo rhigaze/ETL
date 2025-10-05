@@ -14,8 +14,6 @@ from langchain_core.messages import SystemMessage
 from langchain_experimental.tools.python.tool import PythonAstREPLTool
 
 
-
-
 class DataAgentTools:
     # Agent to create reports and visualizations
     def __init__(self, df: pd.DataFrame):
