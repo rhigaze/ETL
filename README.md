@@ -70,6 +70,6 @@ pip3 install -r requirements-agent.txt
 
 # Run agent
 ```bash
-python3 agents.py --file "output/merged_data.parquet"
+python3 agents.py --file "output/merged_data.parquet" --openai_api_key "your_openai_api_key"
 ```
 

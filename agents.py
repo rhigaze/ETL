@@ -13,7 +13,7 @@ from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain_core.messages import SystemMessage
 from langchain_experimental.tools.python.tool import PythonAstREPLTool
 
-OPEN_AI_API_KEY = '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'
+
 
 
 class DataAgentTools:
@@ -110,9 +110,11 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Demo script")
     parser.add_argument("--file", type=str, required=True, help="Dataset file path")
+    parser.add_argument("--openai_api_key", type=str, required=True, help="API key for OpenAI")
     args = parser.parse_args()
 
     data_file = args.file #"output/merged_data.parquet"
+    open_ai_api_key = args.openai_api_key #can also be env variable os.getenv("OPENAI_API_KEY")
     print(f"data_file : {data_file}")
     df = load_dataset(data_file)
     data_agent_tools = DataAgentTools(df.head(10))
@@ -131,7 +133,7 @@ if __name__ == "__main__":
     ]
 
     # Small, CPU-friendly text generation model
-    llm = ChatOpenAI(api_key=OPEN_AI_API_KEY, model='gpt-4o-mini')
+    llm = ChatOpenAI(api_key=open_ai_api_key, model='gpt-4o-mini')
     df_head = str(df.head(2).to_markdown())
 
     content = """
