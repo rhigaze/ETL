@@ -13,7 +13,7 @@ from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain_core.messages import SystemMessage
 from langchain_experimental.tools.python.tool import PythonAstREPLTool
 
-OPEN_AI_API_KEY = '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'
+OPEN_AI_API_KEY = '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'
 
 
 class DataAgentTools:
@@ -108,12 +108,11 @@ if __name__ == "__main__":
     print("Accessing Data...")
 
     import argparse
-
     parser = argparse.ArgumentParser(description="Demo script")
     parser.add_argument("--file", type=str, required=True, help="Dataset file path")
     args = parser.parse_args()
 
-    data_file = args.dataset_path #"output/merged_data.parquet"
+    data_file = args.file #"output/merged_data.parquet"
     print(f"data_file : {data_file}")
     df = load_dataset(data_file)
     data_agent_tools = DataAgentTools(df.head(10))
