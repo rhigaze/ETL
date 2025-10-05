@@ -28,6 +28,7 @@ Note: Replace the environment variable values with your actual file names if nee
 
 ```bash  
 git clone https://github.com/rhigaze/ETL.git
+
 cd ETL
 ```
 
@@ -64,10 +65,11 @@ Visualize data by generating histograms of any column, returned as images ready 
 # Requirements
 
 ```bash
-pip3 install fastparquet==2024.11.0 pandas==2.3.2 matplotlib==3.10.6 langchain==0.3.27 langchain-openai==0.3.33 langchain-experimental==0.3.4 langchain-core==0.3.76 openai==1.109.1 tabulate==0.9.0
+pip3 install -r requirements-agent.txt
 ```
 
 # Run agent
 ```bash
-python3 agents.py --file "output/merged_data.parquet"
+python3 agents.py --file "output/merged_data.parquet" --openai_api_key "your_openai_api_key"
 ```
+
